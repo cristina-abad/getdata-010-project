@@ -83,8 +83,8 @@ names(data) <- gsub("Jerk", "_jerk", names(data))
 names(data) <- gsub("Gravity", "gravity", names(data))
 
 # Store this dataset
-write.table(data, "mean_and_std.txt")
+write.table(data, "mean_and_std.txt", row.name=FALSE)
 
 # 5) From the data set in step 4, create a second, independent tidy data set with the average of each variable for each activity and each subject.
 averages <- aggregate(. ~subject + activity, data, mean)
-write.table(averages, "averages.txt")
+write.table(averages, "averages.txt", row.name=FALSE)
